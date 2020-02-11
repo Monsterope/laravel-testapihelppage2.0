@@ -111,10 +111,40 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Dashboard overview."
+                        "description": "Dashboard overview.",
+                        "schema": {
+                            "properties": {
+                                "first_name": {
+                                    "type": "string",
+                                    "example": "Monster"
+                                },
+                                "last_name": {
+                                    "type": "string",
+                                    "example": "Portable"
+                                },
+                                "age": {
+                                    "type": "integer",
+                                    "example": 232323
+                                },
+                                "phone": {
+                                    "type": "string",
+                                    "example": "34343243243"
+                                }
+                            },
+                            "type": "object"
+                        }
                     },
                     "401": {
-                        "description": "Unauthorized action."
+                        "description": "Unauthorized action.",
+                        "schema": {
+                            "properties": {
+                                "message": {
+                                    "type": "string",
+                                    "example": "Unauthorized"
+                                }
+                            },
+                            "type": "object"
+                        }
                     }
                 }
             }

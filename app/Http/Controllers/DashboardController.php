@@ -102,11 +102,22 @@ class DashboardController extends ApiController
         *     ),
         *     @SWG\Response(
         *         response=200,
-        *         description="Dashboard overview."
+        *         description="Dashboard overview.",
+        *         @SWG\Schema(
+        *             type="object",
+        *             @SWG\Property(property="first_name", type="string", example="Monster"),
+        *             @SWG\Property(property="last_name", type="string", example="Portable"),
+        *             @SWG\Property(property="age", type="integer", example=232323),
+        *             @SWG\Property(property="phone", type="string", example="34343243243"),
+        *         )
         *     ),
         *     @SWG\Response(
         *         response=401,
         *         description="Unauthorized action.",
+        *         @SWG\Schema(
+        *             type="object",
+        *             @SWG\Property(property="message", type="string", example="Unauthorized"),
+        *         )
         *     )
         * )
     */
