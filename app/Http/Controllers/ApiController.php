@@ -11,7 +11,6 @@ use Illuminate\Http\Request;
  *
  * @SWG\Swagger(
  *     basePath="",
- *     host="localhost:8000",
  *     schemes={"http"},
  *     @SWG\Info(
  *         version="1.0",
