@@ -1,0 +1,143 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Monsterlove API",
+        "contact": {
+            "name": "Monsterlove",
+            "url": "https://www.google.com"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost:8000",
+    "basePath": "",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/api/dashboard": {
+            "get": {
+                "tags": [
+                    "Dashboard"
+                ],
+                "summary": "Get list of projects",
+                "description": "Returns dashboard overview.",
+                "operationId": "api.dashboard.index",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "JWT Token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "firstname",
+                        "in": "path",
+                        "description": "Your first name",
+                        "type": "string"
+                    },
+                    {
+                        "name": "lastname",
+                        "in": "query",
+                        "description": "Your last name",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Dashboard overview."
+                    },
+                    "401": {
+                        "description": "Unauthorized action."
+                    }
+                }
+            }
+        },
+        "/api/dashboardPost": {
+            "post": {
+                "tags": [
+                    "Dashboard"
+                ],
+                "description": "Returns dashboard overview.",
+                "operationId": "api.dashboard.index",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "content-type",
+                        "in": "header",
+                        "description": "application/json",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "JWT Token",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "JSON Payload",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "first_name": {
+                                    "type": "string",
+                                    "example": "Monster"
+                                },
+                                "last_name": {
+                                    "type": "string",
+                                    "example": "Portable"
+                                },
+                                "age": {
+                                    "type": "integer",
+                                    "example": 232323
+                                },
+                                "phone": {
+                                    "type": "string",
+                                    "example": "34343243243"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "format": "application/json"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Dashboard overview."
+                    },
+                    "401": {
+                        "description": "Unauthorized action."
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Error": {
+            "required": [
+                "code",
+                "message"
+            ],
+            "properties": {
+                "code": {
+                    "description": "Class ApiController",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "message": {
+                    "description": "Class ApiController",
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
